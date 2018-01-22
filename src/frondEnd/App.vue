@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    Hello World!!!!
+      <fileInput></fileInput>
+      <div>
+      <input type="submit">
+      </div>
+    </form>
   </div>
 </template>
 
 <script>
+import fileInput from './basicVue/fileInput.vue'
+
 export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+  components: {
+    fileInput
   }
 }
 </script>

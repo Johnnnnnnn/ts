@@ -5,7 +5,13 @@ module.exports = {
   entry: path.resolve(__dirname, './main.js'),
   output: {
     path: path.resolve(__dirname, '../../out'),
-    publicPath: '/out/',
+    
+    // Public path refers to the location from the _browser's_ perspective, so 
+    // `/public' would be referring to `mydomain.com/public/` instead of just
+    // `mydomain.com`.  --https://stackoverflow.com/questions/36039146/webpack-dev-server-compiles-files-but-does-not-refresh-or-make-compiled-javascri
+    // It makes pages do not update automatically by src changed when running on webpack-dev-derver.
+    // Because it detects changes of `localhost:$port$publicPath` but `localhost:$port`. 
+    /* publicPath: '/out/',*/
     filename: 'core.js'
   },
   module: {
@@ -45,10 +51,14 @@ module.exports = {
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
-  devServer: {
+
+  //It is for webpack-dev-server
+  devServer: {  
+    compress: true,
     historyApiFallback: true,
     noInfo: true,
-    overlay: true
+    overlay: true,
+    port: 9000
   },
   performance: {
     hints: false

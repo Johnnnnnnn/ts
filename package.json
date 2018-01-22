@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build_front": "webpack --config \"src/frondEnd/webpack.config.js\"",
-    "dev": "npm run build_front && webpack-dev-server --config \"src/frondEnd/webpack.config.js\"",
+    "dev": "npm run build_front && webpack-dev-server -w --config \"src/frondEnd/webpack.config.js\" --content-base out/",
+    "dev_express": "node src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
