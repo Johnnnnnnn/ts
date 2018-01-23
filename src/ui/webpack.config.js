@@ -14,6 +14,7 @@ module.exports = {
     /* publicPath: '/out/',*/
     filename: 'core.js'
   },
+  //you can find introductions of most of loader on https://webpack.js.org/loaders/
   module: {
     rules: [
       {
@@ -45,6 +46,16 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+     new webpack.ProvidePlugin(
+      {
+        $: 'jquery',
+        jquery: 'jquery',
+        'window.jQuery': 'jquery',
+        jQuery: 'jquery'
+      }
+    )
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'

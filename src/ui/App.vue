@@ -1,15 +1,11 @@
 <template>
   <div id="app">
       <fileInput></fileInput>
-      <div>
-      <input type="submit">
-      </div>
-    </form>
   </div>
 </template>
 
 <script>
-import fileInput from './basicVue/fileInput.vue'
+import fileInput from './component/fileInput.vue'
 
 export default {
   components: {
