@@ -14,9 +14,23 @@ module.exports = {
     /* publicPath: '/out/',*/
     filename: 'core.js'
   },
+
+
+   plugins: [
+    new webpack.DefinePlugin({
+        SERVER_HOST : '"localhost:3000"'
+    })
+  ],
   //you can find introductions of most of loader on https://webpack.js.org/loaders/
   module: {
     rules: [
+      {
+        test: require.resolve('jquery'),
+        use: [{
+          loader: 'expose-loader',
+          options: '$'
+        }]
+      },
       {
         test: /\.css$/,
         use: [
@@ -46,22 +60,13 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-     new webpack.ProvidePlugin(
-      {
-        $: 'jquery',
-        jquery: 'jquery',
-        'window.jQuery': 'jquery',
-        jQuery: 'jquery'
-      }
-    )
-  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
+ 
 
   //It is for webpack-dev-server
   devServer: {  

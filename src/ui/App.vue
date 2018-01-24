@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-      <fileInput></fileInput>
+      <fileInput @change="fileChange"></fileInput>
   </div>
 </template>
 
@@ -8,6 +8,11 @@
 import fileInput from './component/fileInput.vue'
 
 export default {
+  methods : {
+    fileChange (){
+      console.error('!?')
+    }
+  },
   components: {
     fileInput
   }

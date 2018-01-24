@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-
-console.error('$ =>1 ' + (typeof window.$))
-
+require('jquery')
+console.error(SERVER_HOST)
 new Vue({
   el: '#app',
   render: h => h(App)
