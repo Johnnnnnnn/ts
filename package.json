@@ -6,7 +6,7 @@
   "scripts": {
     "build_front": "webpack --config \"src/ui/webpack.config.js\"",
     "webpack-dev-server": "npm run build_front && webpack-dev-server -w --config \"src/ui/webpack.config.js\" --content-base out/",
-    "dev": "concurrently --kill-others \"nodemon src/main.js\" \"npm run webpack-dev-server\"",
+    "dev": "concurrently --kill-others \"npm run webpack-dev-server\" \"nodemon src/main.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Johnnnnnnn/ts#readme",
   "dependencies": {
+    "busboy": "^0.2.14",
     "express": "^4.16.2",
     "jquery": "^3.3.1",
     "vue": "^2.5.11"
