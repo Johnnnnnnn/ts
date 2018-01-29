@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Johnnnnnnn/ts#readme",
   "dependencies": {
+    "bit-buffer": "^0.2.3",
     "busboy": "^0.2.14",
     "express": "^4.16.2",
     "jquery": "^3.3.1",
